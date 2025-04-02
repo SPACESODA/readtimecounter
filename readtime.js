@@ -1,17 +1,16 @@
 /**
- * Reading Time Counter v3.2.6
- * https://github.com/hypestudiox/readtimecounter
+ * Read Time Counter v3.2.7
+ * https://github.com/SPACESODA/readtimecounter
  */
+
 (function () {
-  // Default settings (can be overridden via window.readingTimeSettings)
+  // Default settings
   const defaults = {
     engSpeed: 230, // words per minute for English and Latin-based languages
-    charSpeed: 285, // CKJ characters per minute
+    charSpeed: 285, // characters per minute for CKJ
     imgSpeed: 8, // seconds per image
     timeFormat: "decimal" // "decimal" or "integer"
   };
-
-  // Merge defaults with user overrides (if provided)
   const settings = Object.assign(
     {},
     defaults,
@@ -51,9 +50,8 @@
       return "";
     }
     let rawText = walkNodes(element);
-    return rawText
-      .replace(/\s+/g, " ") // Collapse multiple spaces into one
-      .trim(); // Remove leading/trailing spaces
+    // Normalize whitespace and trim
+    return rawText.replace(/\s+/g, " ").trim();
   }
 
   function updateDisplay(element) {
@@ -61,34 +59,27 @@
     let engCount = countWords(text, false);
     let ckjCount = countWords(text, true);
     let imgCount = countImages(element);
-
     let engTime = engCount / settings.engSpeed;
     let ckjTime = ckjCount / settings.charSpeed;
     let imgTime = (imgCount * settings.imgSpeed) / 60;
     let totalReadingTime = engTime + ckjTime + imgTime;
-
     // Format time based on settings.timeFormat
-    let roundedTime = Math.round(totalReadingTime * 10) / 10; // Base calculation to 1 decimal
+    let roundedTime = Math.round(totalReadingTime * 10) / 10;
     let displayTime;
     if (settings.timeFormat === "integer") {
       displayTime = Math.round(totalReadingTime); // Round to nearest integer
     } else {
-      displayTime = roundedTime; // Keep 1 decimal place (default)
+      displayTime = roundedTime; // Keep 1 decimal place
     }
-    displayTime = displayTime === 0 ? "0" : displayTime; // Ensure 0 for empty content
-
+    displayTime = displayTime === 0 ? "0" : displayTime; // 0 for empty content
     const readTimeElement = document.getElementById("readtime");
     if (readTimeElement) readTimeElement.textContent = `${displayTime}`;
-
     const wordCountElement = document.getElementById("wordCount");
     if (wordCountElement) wordCountElement.textContent = engCount;
-
     const ckjCountElement = document.getElementById("ckjCount");
     if (ckjCountElement) ckjCountElement.textContent = ckjCount;
-
     const imgCountElement = document.getElementById("imgCount");
     if (imgCountElement) imgCountElement.textContent = imgCount;
-
     const hybridCountElement = document.getElementById("hybridCount");
     if (hybridCountElement) {
       let infoParts = [];
@@ -107,7 +98,6 @@
     if (!readtimeArea) {
       return; // Silently exit if no readtimearea
     }
-
     if (
       ["INPUT", "TEXTAREA"].includes(readtimeArea.tagName) ||
       readtimeArea.isContentEditable
@@ -122,7 +112,6 @@
         characterData: true
       });
     }
-
     updateDisplay(readtimeArea);
   });
 })();

@@ -1,48 +1,52 @@
-# Reading Time Counter v3.2.6
+# Read Time Counter
 
-A ***simple and robust*** reading time counter that **accurately** counts words, characters, and images in your content. It calculates the estimated reading time for English, CKJ (Chinese, Korean, Japanese), and other Latin-based languages by combining text reading and image viewing times.  
-
-> ⚠️ **This repo will not be further updated. The project will continue to be maintained at:** [https://github.com/SPACESODA/readtimecounter](https://github.com/SPACESODA/readtimecounter)
+Read Time Counter is a ***simple and robust*** reading time counter that **accurately** counts words, characters, and images in your content. It calculates the estimated reading time for English, CKJ (Chinese, Korean, Japanese), and other Latin-based languages by combining text reading and image viewing times.  
 
 <br>
 
 ## How to use?
 
-### The script:
+There are three ways to include the script:
 
-Simply include the script `readtime.js` in your page’s **footer** code (before `</body>`) and you’re set. For example, add the following to your webpage:
+### 1. Directly embed the script
+
+```html
+<script>
+  // Paste the code of readtime.js here
+</script>
+```
+
+### 2. Host and link your own .js file
+
+Include the script on your page, ideally inside the `<head>` tag with the `defer` attribute so it runs after the HTML is parsed.
 
 ```html
 <script defer src="readtime.js"></script>
 ```
 
-You can also use the CDN version via jsDelivr:
+### 3. Use the CDN
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/gh/hypestudiox/readtimecounter/readtime.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/SPACESODA/readtimecounter/readtime.min.js"></script>
 ```
 
-### Define the area for the counting the Read Time:
+<br>
 
-Wrap your article content in a container with the attribute `id="readtimearea"`.
+## Define the area
 
-**Limitation:** Only one `readtimearea` per webpage is supported.
+Wrap your article content in an element with the attribute `id="readtimearea"`.
 
-### Outputs:
+**Note:** Only one `readtimearea` is supported per page.
 
-Display the estimated reading time (in minutes) by adding an element with the `id="readtime"`.
+## Output elements
 
-For example: `<span id="readtime"></span>`
+Display the estimated reading time (in minutes) by adding an element with the `id="readtime"`. For example: `<span id="readtime"></span>`
 
-The script also outputs individual counts for:
-
-•	**Words:** Displayed in an element with `id="wordCount"`.
-
-•	**CKJ Characters:** Displayed in an element with `id="ckjCount"`.
-
-•	**Images:** Displayed in an element with `id="imgCount"`.
-
-•	**Combined Info:** For a summary view, use an element with `id="hybridCount"`.
+The script also outputs individual counts for:  
+•	**Words:** Displayed in an element with `id="wordCount"`.  
+•	**CKJ Characters:** Displayed in an element with `id="ckjCount"`.  
+•	**Images:** Displayed in an element with `id="imgCount"`.  
+•	**Combined Info:** For displaying a summary, use `id="hybridCount"`.
 
 Example:
 
@@ -64,25 +68,24 @@ Example:
 You can override default reading speed and time format by:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/gh/hypestudiox/readtimecounter/readtime.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/SPACESODA/readtimecounter/readtime.min.js"></script>
 <script>
   window.readingTimeSettings = {
-    engSpeed: 220,
-    charSpeed: 300,
-    imgSpeed: 10,
-    timeFormat: "integer"
+    engSpeed: 225, // words per minute for English and Latin-based languages
+    charSpeed: 300, // characters per minute for CKJ
+    imgSpeed: 10, // seconds per image
+    timeFormat: "integer" // "decimal" or "integer"
   };
 </script>
 ```
 
 <br>
 
-## Live Example
+## Live Example on CodePen
 
-See it on CodePen: https://codepen.io/pen/EaxyZzG
+Visit: https://codepen.io/pen/EaxyZzG
 
 📣 **Please feel free to comment, contribute and make the code better!**
-
 
 <br>
 
