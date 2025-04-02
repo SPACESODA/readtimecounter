@@ -1,42 +1,48 @@
-# Read Time Counter
+# Read Time Counter JS
 
-Read Time Counter is a ***simple and robust*** reading time counter that **accurately** counts words, characters, and images in your content. It calculates the estimated reading time for English, CKJ (Chinese, Korean, Japanese), and other Latin-based languages by combining text reading and image viewing times.  
+Read Time Counter is a ***simple and robust*** reading time counter that **accurately** counts words, characters, and images in your content.
 
-<br>
+It calculates the estimated reading time for English, CKJ (Chinese, Korean, Japanese), and other Latin-based languages by combining text reading and image viewing times.  
+
+&nbsp;
 
 ## How to use?
 
-There are three ways to include the script:
+Ways to include the script:
 
 ### 1. Directly embed the script
 
+Embed the script on your page, ideally before the closing `</body>` tag, to ensure all elements are loaded before the script runs.
+
 ```html
 <script>
-  // Paste the code of readtime.js here
+// Paste the code of readtime.js here
 </script>
 ```
 
 ### 2. Host and link your own .js file
 
-Include the script on your page, ideally inside the `<head>` tag with the `defer` attribute so it runs after the HTML is parsed.
+Place this in the `<head>` with the `defer` attribute so it runs after the DOM is parsed:
 
 ```html
 <script defer src="readtime.js"></script>
 ```
 
-### 3. Use the CDN
+### 3. Use the CDN version
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/gh/SPACESODA/readtimecounter/readtime.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/SPACESODA/readtimecounter@3.2.7/readtime.min.js"></script>
 ```
 
-<br>
+&nbsp;
 
 ## Define the area
 
 Wrap your article content in an element with the attribute `id="readtimearea"`.
 
 **Note:** Only one `readtimearea` is supported per page.
+
+&nbsp;
 
 ## Output elements
 
@@ -61,17 +67,17 @@ Example:
 <p class="note">Summary: <span id="hybridCount"></span></p>
 ```
 
-<br>
+&nbsp;
 
 ## Configurations
 
-You can override default reading speed and time format by:
+If you’re using the CDN version, you can override the default reading speed and time format like this:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/gh/SPACESODA/readtimecounter/readtime.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/SPACESODA/readtimecounter@3.2.7/readtime.min.js"></script>
 <script>
   window.readingTimeSettings = {
-    engSpeed: 225, // words per minute for English and Latin-based languages
+    engSpeed: 225, // words per minute for English
     charSpeed: 300, // characters per minute for CKJ
     imgSpeed: 10, // seconds per image
     timeFormat: "integer" // "decimal" or "integer"
@@ -79,7 +85,7 @@ You can override default reading speed and time format by:
 </script>
 ```
 
-<br>
+&nbsp;
 
 ## Live Example on CodePen
 
@@ -87,7 +93,7 @@ Visit: https://codepen.io/pen/EaxyZzG
 
 📣 **Please feel free to comment, contribute and make the code better!**
 
-<br>
+&nbsp;
 
 ---
 
@@ -98,3 +104,5 @@ https://en.wikipedia.org/wiki/English_alphabet
 https://en.wikipedia.org/wiki/CJK_characters
 
 https://en.wikipedia.org/wiki/Universal_Character_Set_characters
+
+&nbsp;

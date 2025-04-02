@@ -1,12 +1,12 @@
 /**
- * Read Time Counter v3.2.7
+ * Read Time Counter v3.2.8
  * https://github.com/SPACESODA/readtimecounter
  */
 
 (function () {
   // Default settings
   const defaults = {
-    engSpeed: 230, // words per minute for English and Latin-based languages
+    engSpeed: 230, // words per minute for English
     charSpeed: 285, // characters per minute for CKJ
     imgSpeed: 8, // seconds per image
     timeFormat: "decimal" // "decimal" or "integer"
