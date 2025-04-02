@@ -1,6 +1,8 @@
 # Reading Time Counter v3.2.6
 
-A ***simple and robust*** reading time counter that **accurately** counts words, characters, and images in your content. It calculates the estimated reading time for English, CKJ (Chinese, Korean, Japanese), and other Latin-based languages by combining text reading and image viewing times.
+A ***simple and robust*** reading time counter that **accurately** counts words, characters, and images in your content. It calculates the estimated reading time for English, CKJ (Chinese, Korean, Japanese), and other Latin-based languages by combining text reading and image viewing times.  
+
+**This repo will not be furter updated. The project will continue to be maintained at:** https://github.com/SPACESODA/readtimecounter
 
 <br>
 
