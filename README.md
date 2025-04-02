@@ -31,7 +31,7 @@ Place this in the `<head>` with the `defer` attribute so it runs after the DOM i
 ### 3. Use the CDN version
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/gh/SPACESODA/readtimecounter@3.2.7/readtime.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/SPACESODA/readtimecounter@3.2.8/readtime.min.js"></script>
 ```
 
 &nbsp;
@@ -74,7 +74,7 @@ Example:
 If you’re using the CDN version, you can override the default reading speed and time format like this:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/gh/SPACESODA/readtimecounter@3.2.7/readtime.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/SPACESODA/readtimecounter@3.2.8/readtime.min.js"></script>
 <script>
   window.readingTimeSettings = {
     engSpeed: 225, // words per minute for English
